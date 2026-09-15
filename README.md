@@ -1,6 +1,6 @@
 # Максим Семёнов
 
-**Unity Developer (Gameplay / Multiplayer)**
+**Python Developer**
 
 Студент 4 курса факультета информационных технологий, специальность «Информационные системы и технологии в игровой индустрии».
 
@@ -12,44 +12,48 @@
 
 ## Стек
 
-![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=c-sharp&logoColor=white)
-![Unity](https://img.shields.io/badge/Unity%206-000000?style=flat&logo=unity&logoColor=white)
-![Mirror](https://img.shields.io/badge/Mirror%20(KCP)-multimedia-blue)
-![URP](https://img.shields.io/badge/URP-17.3-orange)
-![Blender](https://img.shields.io/badge/Blender-F5792A?style=flat&logo=blender&logoColor=white)
+![Python](https://img.shields.io/badge/Python%203-3776AB?style=flat&logo=python&logoColor=white)
+![tkinter](https://img.shields.io/badge/tkinter-стандартная_библиотека-blue)
+![socket](https://img.shields.io/badge/socket%20%2B%20threading-сеть_и_потоки-blue)
+![numpy](https://img.shields.io/badge/numpy-013243?style=flat&logo=numpy&logoColor=white)
+![matplotlib](https://img.shields.io/badge/matplotlib-визуализация-orange)
+![openpyxl](https://img.shields.io/badge/openpyxl-XLSX-green)
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white)
+
+Основной инструмент — Python и стандартная библиотека: `tkinter`, `socket`, `threading`, `json`, `re`, `collections`, `datetime`. Из сторонних — `numpy`, `matplotlib`, `openpyxl`. Дополнительно — C# / Unity.
 
 ---
 
 ## Проекты
 
-### ⚔️ [Fight! — 3D мультиплеерный файтинг](https://github.com/maximusgeng/3d-multiplayer-fighting-game) *(курсовой проект)*
+### 📡 Монитор неисправностей датчиков автомобиля (Python)
 
-**Unity 6 · C# · Mirror (KCP) · Rigidbody**
+Десктоп-приложение на tkinter: принимает телеметрию по UDP в фоновом потоке либо загружает логи из XLSX, в реальном времени детектирует неисправности — обрывы датчиков, залипание сигнала, аномалии уровня топлива, рассинхрон колёс ABS.
 
-Сетевой файтинг с хостом и подключением по LAN, PC и Android. Реворк открытого проекта Fight! (UNet → Mirror).
+- Сеть и многопоточность: `socket` (UDP) + `threading`, потокобезопасные кольцевые буферы на `collections.deque`
+- Детекция аномалий на скользящих окнах с гистерезисом и дебаунсом событий
+- Парсинг XLSX через `openpyxl` с автоопределением колонок и временной шкалы
+- Графики `matplotlib` (TkAgg), встроенные в интерфейс, с отметками аномалий
+- Журнал неисправностей с группировкой по категориям и датчикам
 
-- Серверная боевая логика: урон, блок щитом, здоровье, смерть и победа последнего выжившего — через `Command` / `ClientRpc` / `SyncVar`
-- Лобби с комнатами, круговое распределение точек спавна, рестарт матча
-- Боёвка на Rigidbody: движение, прыжок с рывком, меч / кулаки / магия, партиклы попаданий, тряска камеры
-- Анимации персонажа на Animation Events с сетевой синхронизацией (NetworkAnimator)
-- Кроссплатформенный ввод: клавиатура + виртуальный джойстик для Android
-- HUD с полосками здоровья игроков и статистикой побед/поражений
+### ⚔️ [Fight! — 3D мультиплеерный файтинг](https://github.com/maximusgeng/3d-multiplayer-fighting-game) *(Unity, курсовой проект)*
 
-### 🌫️ [Lighthouse — 3D-сцена с интерактивным освещением](https://github.com/maximusgeng/lighthouse-3d-scene)
+Unity 6 · C# · Mirror (KCP) · Rigidbody. Сетевой файтинг по LAN, PC + Android.
 
-**Unity 6 (URP) · C# · Blender · Particle System**
+- Серверная боевая логика (урон, блок, победа последнего выжившего) через `Command` / `ClientRpc` / `SyncVar`
+- Лобби, точки спавна, рестарт матча; анимации на Animation Events + `NetworkAnimator`
 
-Атмосферная сцена от первого лица: маяк, скалы, каменные колонны.
+### 🌫️ [Lighthouse — 3D-сцена с интерактивным светом](https://github.com/maximusgeng/lighthouse-3d-scene) *(Unity + Blender)*
 
-- Моделирование окружения в Blender и сборка сцены в Unity (материалы, текстуры, скайбокс)
-- Взаимодействие с миром: включение источника света по клавише с плавным изменением интенсивности
-- Динамический туман на Particle System с синусоидальной анимацией времени жизни частиц
+Unity 6 (URP) · Blender · Particle System.
+
+- Модели окружения в Blender, сборка сцены в Unity
+- Динамический туман на частицах, интерактивные источники света
 
 ---
 
 ## Чем полезен
 
-- Геймплей-программирование на C# под Unity: персонажи, боевые системы, физика
-- Настройка сетевого мультиплеера на Mirror
-- Подготовка 3D-контента: Blender → Unity (URP)
+- Python: десктоп-приложения с GUI, сетевые приложения (UDP/TCP), многопоточность, обработка данных и логов
+- C# / Unity: геймплей, физика, сетевой мультиплеер на Mirror
+- Blender → Unity: подготовка 3D-контента
