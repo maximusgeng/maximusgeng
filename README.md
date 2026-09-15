@@ -4,8 +4,8 @@
 
 Студент 4 курса факультета информационных технологий, специальность «Информационные системы и технологии в игровой индустрии».
 
-- 📞 +7 (___) ___-__-__
-- ✉️ `your.email@example.com`
+- 📞 +375 (33) 375-25-**
+- ✉️ m.s.semenov@students.psu.by
 - 💻 github.com/[maximusgeng](https://github.com/maximusgeng)
 
 ---
